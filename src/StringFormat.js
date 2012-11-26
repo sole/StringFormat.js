@@ -1,6 +1,10 @@
+// StringFormat.js r2 - http://github.com/sole/StringFormat.js
 var StringFormat = {
 	pad: function(number, minimumLength, paddingCharacter) {
+		
 		var sign = number >= 0 ? 1 : -1,
+			minimumLength = minimumLength !== undefined ? minimumLength : 1,
+			paddingCharacter = paddingCharacter !== undefined ? paddingCharacter : ' ',
 			str = Math.abs(number).toString(),
 			actualMinimumLength = minimumLength;
 
@@ -20,6 +24,10 @@ var StringFormat = {
 	},
 	
 	toFixed: function(number, numberDecimals) {
-		return Math.floor(number * 100) / 100;
+		
+		var numberDecimals = numberDecimals !== undefined ? numberDecimals : 2,
+		multiplier = Math.pow( 10 , numberDecimals );
+
+		return Math.floor( Math.round( number * multiplier ) ) / multiplier;
 	}
 }
