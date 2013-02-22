@@ -25,11 +25,9 @@ var StringFormat = {
 	},
 	
 	toFixed: function(number, numberDecimals) {
-		
-		var numberDecimals = numberDecimals !== undefined ? numberDecimals : 2,
-		multiplier = Math.pow( 10 , numberDecimals );
+				
+		return (+number).toFixed( numberDecimals );
 
-		return Math.floor( Math.round( number * multiplier ) ) / multiplier;
 	},
 	
 	secondsToHHMMSS: function( _seconds ) {
