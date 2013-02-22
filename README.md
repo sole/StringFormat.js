@@ -3,9 +3,11 @@ StringFormat.js
 
 Simple Javascript library to format strings.
 
-I'm adding methods as I see fit (they're extracted from real working software). If you do a new method that is helpful, please submit a patch!
+I'm adding methods as I see fit (they're extracted from real working software). If you write a new method that is helpful, please submit a patch (with tests)!
 
-Thanks.
+But before you do that, remember that the name of the library is **StringFormat**. Your method has to **format** strings. Don't use this library as a holder for all your string-handling functions because I probably won't be merging those changes in, sorry.
+
+Thanks :-)
 
 # Currently available methods
 
@@ -31,4 +33,16 @@ Default _numberDecimals_ = 2.
 ````javascript
 StringFormat.toFixed( 0.3294872340192823801923, 2 );    // returns 0.33
 StringFormat.toFixed( 0.51234, 3 );                     // returns 0.512
+````
+
+## secondsToHHMMSS( seconds )
+
+Convert seconds into a human readable string, _hh:mm:ss_ format.
+
+````javascript
+StringFormat.secondsToHHMMSS( 30 );    // returns "00:00:30"
+StringFormat.secondsToHHMMSS( 60 );    // returns "00:01:00"
+StringFormat.secondsToHHMMSS( 90 );    // returns "00:01:30"
+StringFormat.secondsToHHMMSS( 120 );    // returns "00:02:00"
+StringFormat.secondsToHHMMSS( 3600 );    // returns "01:00:00"
 ````
