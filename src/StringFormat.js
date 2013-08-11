@@ -2,11 +2,13 @@
 var StringFormat = {
 
 	pad: function(number, minimumLength, paddingCharacter) {
-		
-		var sign = number >= 0 ? 1 : -1,
-			minimumLength = minimumLength !== undefined ? minimumLength : 1,
-			paddingCharacter = paddingCharacter !== undefined ? paddingCharacter : ' ',
-			str = Math.abs(number).toString(),
+
+		var sign = number >= 0 ? 1 : -1;
+
+		minimumLength = minimumLength !== undefined ? minimumLength : 1,
+		paddingCharacter = paddingCharacter !== undefined ? paddingCharacter : ' ';
+
+		var str = Math.abs(number).toString(),
 			actualMinimumLength = minimumLength;
 
 		if(sign < 0) {
@@ -22,15 +24,17 @@ var StringFormat = {
 		}
 
 		return str;
+
 	},
 	
 	toFixed: function(number, numberDecimals) {
-				
+
 		return (+number).toFixed( numberDecimals );
 
 	},
 	
 	secondsToHHMMSS: function( _seconds ) {
+
 		var hours, minutes, seconds = _seconds;
 
 		hours = Math.floor( seconds / 3600 );
@@ -42,13 +46,14 @@ var StringFormat = {
 		seconds = Math.floor( seconds );
 
 		return StringFormat.pad( hours, 2, '0' ) + ':' + StringFormat.pad( minutes, 2, '0' ) + ':' + StringFormat.pad( seconds, 2, '0' );
+
 	}
-}
+};
 
 // CommonJS module format etc
 try {
-	exports.pad = StringFormat.pad;
-	exports.toFixed = StringFormat.toFixed;
-	exports.secondsToHHMMSS = StringFormat.secondsToHHMMSS;
+	if(exports && exports.module) {
+		exports.module = StringFormat;
+	}
 } catch( e ) {
 }
