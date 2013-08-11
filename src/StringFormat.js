@@ -52,8 +52,7 @@ var StringFormat = {
 
 // CommonJS module format etc
 try {
-	if(exports && exports.module) {
-		exports.module = StringFormat;
-	}
+	module.exports = StringFormat;
 } catch( e ) {
 }
+
