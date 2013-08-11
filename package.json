@@ -1,0 +1,24 @@
+{
+	"name": "stringformat",
+	"description": "Simple Javascript library to format strings",
+	"version": "0.0.3",
+	"main": "src/StringFormat.js",
+	"homepage": "https://github.com/sole/StringFormat",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/sole/StringFormat.git"
+	},
+	"bugs": {
+		"url": "https://github.com/sole/StringFormat/issues"
+	},
+	"licenses": [
+		{
+			"type": "GPL",
+			"url": "https://github.com/sole/StringFormat/blob/master/LICENSE"
+		}
+	],
+	"keywords": [
+		"strings, format, text manipulation, padding, dates"
+	]
+}
+
