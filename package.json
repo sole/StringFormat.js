@@ -1,5 +1,5 @@
 {
-	"name": "stringformat",
+	"name": "stringformat.js",
 	"description": "Simple Javascript library to format strings",
 	"version": "0.0.3",
 	"main": "src/StringFormat.js",
